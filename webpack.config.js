@@ -18,7 +18,7 @@ module.exports = {
     rules: [
       {
         test: /\.svg$/,
-        exclude: [path.resolve(__dirname, "assets/fonts")],
+        exclude: [path.resolve(__dirname, "public/fonts")],
         use: [
           {
             loader: 'svg-fallback-loader',
@@ -69,7 +69,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        exclude: [path.resolve(__dirname, "assets/fonts")],
+        exclude: [path.resolve(__dirname, "public/fonts")],
         use: ['file-loader'],
       },
       {
