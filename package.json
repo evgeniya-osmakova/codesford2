@@ -1,0 +1,62 @@
+{
+  "name": "hh",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evgeniya-osmakova/hh.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evgeniya-osmakova/hh/issues"
+  },
+  "homepage": "https://github.com/evgeniya-osmakova/hh#readme",
+  "author": "Evgeniya Osmakova",
+  "private": true,
+  "keywords": [],
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jquery": "^3.5.1",
+    "popper": "^1.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-iframe": "^1.8.0",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-svg-loader": "^3.0.3",
+    "redux-actions": "^2.6.5",
+    "svg-fallback-loader": "^0.1.1",
+    "svg-inline-loader": "^0.8.2",
+    "svg-react-loader": "^0.4.6",
+    "url-loader": "^4.1.1"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.0",
+    "style-loader": "^1.2.1",
+    "file-loader": "^6.1.1",
+    "sass-loader": "^10.0.4",
+    "saas": "^1.0.0",
+    "node-sass": "^4.14.1",
+    "html-webpack-plugin": "^4.5.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-react": "^7.20.6",
+    "react-scripts": "3.4.3",
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
