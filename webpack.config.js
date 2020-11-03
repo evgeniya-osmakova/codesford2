@@ -5,13 +5,11 @@ const webpack = require("webpack");
 module.exports = {
   entry: './src/index.js',
   output: {
-    publicPath: '',
     path: path.join(__dirname, '/dist'),
     filename: 'result.js',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    // compress: true,
+    compress: true,
     port: 9000,
   },
   module: {
@@ -59,6 +57,9 @@ module.exports = {
           },
           {
             loader: "react-svg-loader",
+            options: {
+              jsx: true // true outputs JSX tags
+            }
           },
         ]
       },
