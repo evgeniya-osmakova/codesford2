@@ -5,7 +5,7 @@ const webpack = require("webpack");
 module.exports = {
   entry: './src/index.js',
   output: {
-    publicPath: '/',
+    publicPath: '',
     path: path.join(__dirname, '/dist'),
     filename: 'result.js',
   },
@@ -17,19 +17,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.svg$/,
-        exclude: [path.resolve(__dirname, "public/fonts")],
-        use: [
-          {
-            loader: 'svg-fallback-loader',
-          },
-          {
-            loader: "svg-react-loader",
-          },
-          {
-            loader: "babel-loader"
-          }
-        ]
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.s[ac]ss$/i,
@@ -50,30 +42,30 @@ module.exports = {
         ],
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.jsx/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         exclude: [path.resolve(__dirname, "public/fonts")],
         use: ['file-loader'],
       },
       {
+        test: /\.svg$/,
+        exclude: [path.resolve(__dirname, "public/fonts")],
+        use: [
+          {
+            loader: "babel-loader"
+          },
+          {
+            loader: "react-svg-loader",
+          },
+        ]
+      },
+      {
         test: /\.(ttf|eot|svg|woff)$/,
+        include: [path.resolve(__dirname, "public/fonts")],
+        exclude: [path.resolve(__dirname, "src")],
         use: ['file-loader'],
       },
     ],
