@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Header_and_Footer/1.scss';
+import './Team.scss';
 import alesya from '../Main/img/Alesya.png';
 import evgeniy from '../Main/img/Evgeniy.png';
 import evgeniya from '../Main/img/Evgeniya.png';

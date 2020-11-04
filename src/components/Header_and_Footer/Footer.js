@@ -1,11 +1,11 @@
 import React from 'react';
-import './1.scss';
+import './Footer.scss';
 import { Link, BrowserRouter, Switch, Route } from 'react-router-dom';
 import ru from './img/ru.png';
 import en from './img/en.png';
-import fb from './img/fb.png';
-import youtube from './img/youtube.png';
-import telegram from './img/telegram.png';
+import fb from './img/fb.svg';
+import youtube from './img/youtube.svg';
+import telegram from './img/telegram.svg';
 
 function Footer() {
   return (

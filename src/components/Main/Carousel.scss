@@ -1,0 +1,14 @@
+.carousel {
+  min-height: 100vh;
+}
+
+.carousel-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25%;
+
+  &__title {
+    width: 70%;
+  }
+}

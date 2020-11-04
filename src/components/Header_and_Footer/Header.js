@@ -1,7 +1,7 @@
 import React from 'react';
-import './1.scss';
+import './Header.scss';
 import { Link, BrowserRouter, Switch, Route} from 'react-router-dom';
-import logo from './img/logo.png';
+import logo from './img/logo.svg';
 import en from './img/en.png';
 import ru from './img/ru.png';
 

@@ -1,0 +1,49 @@
+.team-page {
+  background-color: #F0F3FB;
+}
+
+.team-page__background {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+}
+
+@media (min-width: 768px) {
+  .team-page__background {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .team-page__teammate {
+    margin-left: 10%;
+  }
+}
+
+.team-page__university, .team-page__company, .team-page__stack {
+  display: block;
+  margin: auto;
+}
+
+.team-page__name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: #4560F5;
+}
+
+.team-page__position {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+
+.team-page__description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 200%;
+  letter-spacing: 0.01em;
+  color: #1C1D5D;
+}

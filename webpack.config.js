@@ -44,7 +44,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif)$/,
         exclude: [path.resolve(__dirname, "public/fonts")],
         use: ['file-loader'],
       },
@@ -53,13 +53,10 @@ module.exports = {
         exclude: [path.resolve(__dirname, "public/fonts")],
         use: [
           {
-            loader: "babel-loader"
+            loader: 'file-loader',
           },
           {
-            loader: "react-svg-loader",
-            options: {
-              jsx: true // true outputs JSX tags
-            }
+            loader: "svgo-loader",
           },
         ]
       },

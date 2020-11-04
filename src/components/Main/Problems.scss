@@ -1,0 +1,32 @@
+.user-problems__subheader {
+  color: #4560F5;
+}
+
+.user-problems__background {
+  height: 200px;
+  background: #FAFAFA;
+  border: 1px solid #DDDDDD;
+  box-sizing: border-box;
+  border-radius: 15px;
+  position: relative;
+}
+
+.user-problems__num {
+  margin-top: 24px;
+  margin-left: 24px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  color: #4560F5;
+  line-height: 108%;
+}
+
+.user-problems__description {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-bottom: 16px;
+  margin-left: 24px;
+  margin-right: 24px;
+  position: absolute;
+  bottom: 0;
+}

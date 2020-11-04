@@ -1,0 +1,23 @@
+html, body {
+  min-width: 300px;
+  font-family: Montserrat, sans-serif !important;
+}
+
+
+.solution, .codesford, .team, .footer {
+  background: #1C1D5D;
+  color: #fff;
+}
+
+.price__subheader, .reasons__subheader, .where-use__subheader, .refund__subheader {
+  color: #4560F5;
+}
+
+.price__image, .codesford__image, .reasons__image, .where-use__image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.solution__subheader, .price__subheader, .codesford__subheader, .reasons__subheader, .where-use__subheader, .refund__subheader, .team__subheader {
+  padding-top: 50px;
+}
