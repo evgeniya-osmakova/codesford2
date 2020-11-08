@@ -1,0 +1,23 @@
+@import "../../src/vars.scss";
+
+html, body {
+  min-width: 300px;
+  @include bodyText;
+  //font-family: Montserrat, sans-serif !important;
+}
+
+h1 {
+  @include h1Text;
+}
+
+h2 {
+  @include h2Text;
+}
+
+h3 {
+  @include h3Text;
+}
+
+//h4 {
+//  @include h4Text;
+//}
