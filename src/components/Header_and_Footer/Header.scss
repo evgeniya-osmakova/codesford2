@@ -1,9 +1,16 @@
+@import '../common.scss';
+
+.headerBlock {
+  height: 75px;
+}
+
 .logo__img {
   height: 60px;
 }
 
 .menu__list-item {
   margin: 0 15px 0 15px;
+  cursor: pointer;
 }
 
 .menu__auth {
@@ -18,7 +25,8 @@
 
 .menu__link, .menu__language-text {
   color: #1C1D5D !important;
-  font-weight: 900;
+  font-weight: bold;
+  //font-size: 30px;
 }
 
 .menu__language {
@@ -34,4 +42,8 @@
   text-decoration: none;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
   padding: 0;
+}
+
+.menu__language-img {
+  padding-right: 5px;
 }

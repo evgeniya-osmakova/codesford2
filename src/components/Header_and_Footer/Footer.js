@@ -6,39 +6,48 @@ import en from './img/en.png';
 import fb from './img/fb.svg';
 import youtube from './img/youtube.svg';
 import telegram from './img/telegram.svg';
+import {useTranslation} from 'react-i18next';
 
 function Footer() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="row pt-4">
           <div className="footer__address col-md-4 pb-4">
-            <p className="footer__address-header">Address</p>
-            <p className="footer__address-office text-white-50">59-69 Pearcedale Parade Broadmeadows <br /> VIC 3047</p>
+            <p className="footer__address-header">{t('footer.address.title')}</p>
+            <p className="footer__address-office text-white-50">{t('footer.address.text1')}
+            <br/>{t('footer.address.text2')}
+            </p>
           </div>
           <div className="footer__menu col-md-4 pb-4 text-center">
             <ul className="footer__menu-list pl-0">
               <li>
-                <Link className="footer__menu-link mr-4" to="/">Main</Link>
+                <Link className="footer__menu-link mr-4" to="/">{t('footer.menu.item1')}</Link>
               </li>
               <li>
-                <Link className="footer__menu-link mr-4" to="/study/">Study</Link>
+                <Link className="footer__menu-link mr-4" to="/study/">{t('footer.menu.item2')}</Link>
               </li>
               <li>
-                <Link className="footer__menu-link" to="/crew/">Team</Link>
+                <Link className="footer__menu-link" to="/crew/">{t('footer.menu.item3')}</Link>
               </li>
             </ul>
           </div>
           <div className="footer__social col-md-4 pb-4 text-right">
-            <p className="footer__social-header">Join us on social networks</p>
+            <p className="footer__social-header">{t('footer.social')}</p>
             <a href="https://www.youtube.com/channel/UCAJdCHneL0v4Ad38UVaCjbg" target="_blank">
-              <img src={youtube} alt="youtube icon" />
+              <img className="menu__language-img" src={youtube} alt="youtube icon" />
             </a>
             <a href="https://t.me/CodesFord" target="_blank">
-              <img src={telegram} alt="telegram icon" />
+              <img className="menu__language-img" src={telegram} alt="telegram icon" />
             </a>
             <a href="https://www.facebook.com/CodesFord2020" target="_blank">
-              <img src={fb} alt="fb icon" />
+              <img className="menu__language-img" src={fb} alt="fb icon" />
             </a>
           </div>
         </div>
@@ -49,13 +58,13 @@ function Footer() {
             </div>
             <div className="footer__menu col-md-4 pb-4 text-center">
               <ul className="footer__menu-list pl-0">
-                <li>
+                <li className="footer__menu__language" onClick={() => changeLanguage('en')}>
                   <img className="menu__language-img" src={en} alt="English flag" />
-                    <span className="footer__menu-link mr-4">En</span>
+                  <span className="footer__menu-link mr-4">En</span>
                 </li>
-                <li>
+                <li className="footer__menu__language" onClick={() => changeLanguage('ru')}>
                   <img className="menu__language-img" src={ru} alt="Российский флаг" />
-                    <Link className="footer__menu-link" to="/ru/">Ру</Link>
+                  <span className="footer__menu-link">Ру</span>
                 </li>
               </ul>
             </div>

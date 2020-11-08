@@ -4,10 +4,17 @@ import { Link, BrowserRouter, Switch, Route} from 'react-router-dom';
 import logo from './img/logo.svg';
 import en from './img/en.png';
 import ru from './img/ru.png';
+import {useTranslation} from 'react-i18next';
 
 function Header() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
-    <>
+    <header className="headerBlock">
       <div>
         <div className="scroll-indicator" id="section01" data-scroll-indicator-title="Main"/>
       </div>
@@ -28,35 +35,33 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="menu__list navbar-nav ml-auto mb-2 mb-lg-0">
               <li className="menu__list-item nav-item">
-                <Link className="menu__link nav-link" aria-current="page" to="/">Main</Link>
+                <Link className="menu__link nav-link" aria-current="page" to="/">{t('header.menu.link1')}</Link>
               </li>
               <li className="menu__list-item nav-item">
-                <Link className="menu__link nav-link" to="/study/">Study</Link>
+                <Link className="menu__link nav-link" to="/study">{t('header.menu.link2')}</Link>
               </li>
               <li className="menu__list-item nav-item">
-                <Link className="menu__link nav-link" to="/crew/">Team</Link>
+                <Link className="menu__link nav-link" to="/crew">{t('header.menu.link3')}</Link>
               </li>
               <li className="menu__list-item menu__auth nav-item">
-                <Link className="menu__link menu__link-signin nav-link btn btn-outline-primary" to="/accounts/signin/">Sign
-                  In</Link>
+                <Link className="menu__link menu__link-signin nav-link btn btn-outline-primary" to="/accounts/signin/">{t('header.btns.btn1')}</Link>
               </li>
               <li className="menu__list-item menu__register nav-item">
-                <Link className="menu__link menu__link-signup nav-link btn btn-primary" to="/accounts/register/">Sign
-                  Up</Link>
+                <Link className="menu__link menu__link-signup nav-link btn btn-primary" to="/accounts/register/">{t('header.btns.btn2')}</Link>
               </li>
-              <li className="menu__list-item nav-item menu__language">
+              <li className="menu__list-item nav-item menu__language" onClick={() => changeLanguage('en')} >
                 <img className="menu__language-img" src={en} alt="English flag" />
-                  <span className="menu__language-text">En</span>
+                <span className="menu__language-text">En</span>
               </li>
-              <li className="menu__list-item nav-item menu__language">
+              <li className="menu__list-item nav-item menu__language" onClick={() => changeLanguage('ru')}>
                 <img className="menu__language-img" src={ru} alt="Российский флаг" />
-                  <Link className="menu__language-text" to="/ru/">Ру</Link>
+                <span className="menu__language-text">Ру</span>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-    </>
+    </header>
   );
 }
 

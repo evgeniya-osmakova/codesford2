@@ -1,0 +1,67 @@
+@import '../public/fonts.scss';
+
+
+@mixin h1Text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 58px;
+  //line-height: 30px;
+}
+
+@mixin h2Text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 52px;
+  font-weight: 500;
+  //line-height: 24px;
+}
+
+@mixin h3Text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  //line-height: 15px;
+}
+
+@mixin h4Text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  //line-height: 15px;
+}
+
+@mixin bodyText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+//@mixin anotherText {
+//  font-family: 'Quicksand', sans-serif;
+//  font-size: 19px;
+//  font-weight: 400;
+//}
+
+
+//.add_button {
+//  text-decoration: none;
+//  outline: none;
+//  margin-top: 30px;
+//  border-radius: 5px;
+//  border-color: transparent;
+//  padding: {
+//    top: 12px;
+//    bottom: 12px;
+//    left: 35px;
+//    right: 35px;
+//  }
+//  cursor: pointer;
+//  background: #BB6BD9;
+//  color: white;
+//  @include bodyText;
+//
+//  &:hover {
+//    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+//  }
+//}

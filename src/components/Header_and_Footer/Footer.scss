@@ -1,3 +1,5 @@
+@import '../common.scss';
+
 .footer__menu-list {
   list-style-type: none;
   display: inline-flex;
@@ -8,12 +10,6 @@
   color: #fff;
 }
 
-.user-problems__subheader, .solution__subheader, .price__subheader, .codesford__subheader, .reasons__subheader, .where-use__subheader, .refund__subheader, .team__subheader {
-  margin-bottom: 25px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 48px;
-  line-height: 56px;
-  text-align: center;
-  letter-spacing: 0.05em;
+.footer__menu__language {
+  cursor: pointer;
 }
