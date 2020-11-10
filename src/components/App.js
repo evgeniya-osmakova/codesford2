@@ -14,7 +14,7 @@ const Loader = () => (
   </div>
 );
 
-// here app catches the suspense from page in case translations are not yet loaded
+
 function App() {
   return (
     <Suspense fallback={<Loader />}>
@@ -38,34 +38,5 @@ function App() {
     </Suspense>
   );
 }
-
-
-// function App() {
-//   return (
-//     <>
-//
-//
-//       <main className="main">
-//         <BrowserRouter>
-//           <Header />
-//           <Switch>
-//             <Route exact path="/">
-//               <Main />
-//             </Route>
-//             <Route path="/crew/">
-//               <Team />
-//             </Route>
-//             <Route path="/study/">
-//               <Courses />
-//             </Route>
-//           </Switch>
-//           <Footer />
-//         </BrowserRouter>
-//       </main>
-//
-//
-//     </>
-//   );
-// }
 
 export default App;

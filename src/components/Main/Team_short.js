@@ -5,7 +5,6 @@ import marie from './img/Marie.jpg';
 import evgeniy from './img/Evgeniy.png';
 import evgeniya from './img/Evgeniya.png';
 import alesya from './img/Alesya.png';
-import maxim from './img/Maxim.png';
 import jane from './img/Jane.png';
 import './Team_short.scss';
 import './Main.scss';

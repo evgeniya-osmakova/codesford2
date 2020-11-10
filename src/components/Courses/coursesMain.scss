@@ -1,0 +1,25 @@
+.study {
+  background-color: #F0F3FB;
+
+  &__course-link {
+    color: #1C1D5D;
+    text-decoration: none;
+  }
+
+  &__course-background {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+  }
+
+  &__course-cover {
+    width: 100%;
+  }
+
+  &__course-name {
+    display: flex;
+    height: 65px;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+  }
+}
