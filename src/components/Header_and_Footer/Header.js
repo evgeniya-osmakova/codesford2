@@ -1,16 +1,20 @@
 import React from 'react';
+import * as allActions from '../../actions';
 import './Header.scss';
 import { Link, BrowserRouter, Switch, Route} from 'react-router-dom';
 import logo from './img/logo.svg';
 import en from './img/en.png';
 import ru from './img/ru.png';
 import {useTranslation} from 'react-i18next';
+import {useDispatch} from 'react-redux';
 
 function Header() {
+  const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
 
-  const changeLanguage = lng => {
+  const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    dispatch(allActions.changeLanguage({ language: lng }));
   };
 
   return (

@@ -7,12 +7,16 @@ import fb from './img/fb.svg';
 import youtube from './img/youtube.svg';
 import telegram from './img/telegram.svg';
 import {useTranslation} from 'react-i18next';
+import * as allActions from '../../actions';
+import {useDispatch} from 'react-redux';
 
 function Footer() {
+  const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
 
   const changeLanguage = lng => {
     i18n.changeLanguage(lng);
+    dispatch(allActions.changeLanguage({ language: lng }));
   };
 
   return (
