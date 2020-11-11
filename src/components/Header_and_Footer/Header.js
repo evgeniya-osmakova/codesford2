@@ -1,7 +1,6 @@
 import React from 'react';
-import * as allActions from '../../actions';
 import './Header.scss';
-import { Link, BrowserRouter, Switch, Route} from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom';
 import logo from './img/logo.svg';
 import en from './img/en.png';
 import ru from './img/ru.png';
@@ -12,9 +11,11 @@ function Header() {
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
 
+  let history = useHistory();
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    dispatch(allActions.changeLanguage({ language: lng }));
+    history.push('/');
   };
 
   return (

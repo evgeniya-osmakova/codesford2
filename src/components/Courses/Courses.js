@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../styles/vacancy_adding.scss';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import CoursesMain from './CoursesMain.js';
 import Html from './Html.js';

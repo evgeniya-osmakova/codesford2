@@ -8,7 +8,7 @@ import {useSelector} from 'react-redux';
 function About() {
   const { t, i18n } = useTranslation();
 
-  const currentLanguage = useSelector((state) => state.language.currentLanguage);
+  const currentLanguage = i18n.language;
 
   const url = () => {
     switch (currentLanguage) {

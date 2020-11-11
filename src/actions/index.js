@@ -1,3 +1,3 @@
 import { createAction } from 'redux-actions';
 
-export const changeLanguage = createAction('LANGUAGE_CHANGE');
+export const changeCurrentVideo = createAction('VIDEO_CHANGE');

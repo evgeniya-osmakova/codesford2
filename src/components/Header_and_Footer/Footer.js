@@ -1,23 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.scss';
-import { Link, BrowserRouter, Switch, Route } from 'react-router-dom';
 import ru from './img/ru.png';
 import en from './img/en.png';
 import fb from './img/fb.svg';
+import vk from './img/vk.svg';
 import youtube from './img/youtube.svg';
 import telegram from './img/telegram.svg';
 import {useTranslation} from 'react-i18next';
-import * as allActions from '../../actions';
-import {useDispatch} from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function Footer() {
-  const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
 
-  const changeLanguage = lng => {
+  const currentLanguage = i18n.language;
+
+  let history = useHistory();
+
+  const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    dispatch(allActions.changeLanguage({ language: lng }));
+    history.push('/');
   };
+
+  const add_vk = () => {
+    return (currentLanguage === 'ru')
+      ? (
+        <a href="https://vk.com/codesford" target="_blank">
+        <img className="menu__language-img" src={vk} alt="vk icon" />
+      </a>
+      )
+      : '';
+  }
 
   return (
     <footer className="footer">
@@ -44,6 +57,7 @@ function Footer() {
           </div>
           <div className="footer__social col-md-4 pb-4 text-right">
             <p className="footer__social-header">{t('footer.social')}</p>
+            {add_vk()}
             <a href="https://www.youtube.com/channel/UCAJdCHneL0v4Ad38UVaCjbg" target="_blank">
               <img className="menu__language-img" src={youtube} alt="youtube icon" />
             </a>
