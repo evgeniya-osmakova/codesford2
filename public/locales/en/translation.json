@@ -1,4 +1,38 @@
 {
+  "signIn": {
+    "header": "Sign In",
+    "placeholder1": "Username",
+    "placeholder2": "Password",
+    "link": "Register"
+  },
+  "registration": {
+    "header": "Registration",
+    "reasons": {
+      "title": "That's why you need to register:",
+      "reason1": "To have full access to education courses."
+    },
+    "formFields": {
+      "field1": {
+        "text": "Username:",
+        "requirement": "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+      },
+      "field2": "First name:",
+      "field3": "Last name:",
+      "field4": "Email address:",
+      "field5": {
+        "text": "Password:",
+        "requirement1": "Your password can’t be too similar to your other personal information.",
+        "requirement2": "Your password must contain at least 8 characters.",
+        "requirement3": "Your password can’t be entirely numeric."
+      },
+      "field6": {
+        "text": "Password confirmation:",
+        "requirement": "Enter the same password as before, for verification."
+      }
+    },
+    "btn": "Register",
+    "link": "Already have an account"
+  },
   "header": {
     "menu": {
       "link1": "Main",

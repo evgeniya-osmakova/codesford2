@@ -1,0 +1,36 @@
+.signin {
+  height: 70vh;
+
+  &__form-header {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #1C1D5D;
+  }
+
+  &__form-field {
+    margin: auto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__form-register-link {
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #1C1D5D;
+    opacity: 0.8;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .signin__form-field {
+    width: 50%;
+  }
+}

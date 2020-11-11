@@ -61,3 +61,18 @@
 .course__content-list::-webkit-scrollbar {
   width: 10px;
 }
+
+/* Track */
+.course__content-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.course__content-list::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.course__content-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

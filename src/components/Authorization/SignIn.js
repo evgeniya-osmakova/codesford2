@@ -1,18 +1,19 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
+import './autorization.scss';
 
 function SignIn() {
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="signin">
       <div className="container">
         <div className="row align-items-center pt-4 text-center justify-content-center">
           <div className="signin__wrapper col-md-12 pb-4 justify-content-center">
+            <h3 className="signin__form-header pb-4">{t('signIn.header')}</h3>
             <form className="signin__form" method="POST" action="">
-                <h3 className="signin__form-header pb-4">{t('signIn.header')}</h3>
                 <div className="signin__form-fields justify-content-center">
                   <div className="signin__form-field pb-4">
                     <input placeholder={t('signIn.placeholder1')} name="username" id="username" type="text"
