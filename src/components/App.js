@@ -7,6 +7,8 @@ import Footer from './Header_and_Footer/Footer.js';
 import Main from './Main/Main.js';
 import Team from './Team/Team.js';
 import Courses from './Courses/Courses.js';
+import Registration from './Authorization/Registration.js';
+import SignIn from './Authorization/SignIn.js';
 
 const Loader = () => (
   <div className="App">
@@ -30,6 +32,12 @@ function App() {
             </Route>
             <Route path="/study">
               <Courses />
+            </Route>
+            <Route path="/registration/">
+              <Registration />
+            </Route>
+            <Route path="/signin/">
+              <SignIn />
             </Route>
           </Switch>
           <Footer />

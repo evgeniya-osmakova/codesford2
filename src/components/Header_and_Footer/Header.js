@@ -49,10 +49,10 @@ function Header() {
                 <Link className="menu__link nav-link" to="/crew">{t('header.menu.link3')}</Link>
               </li>
               <li className="menu__list-item menu__auth nav-item">
-                <Link className="menu__link menu__link-signin nav-link btn btn-outline-primary" to="/accounts/signin/">{t('header.btns.btn1')}</Link>
+                <Link className="menu__link menu__link-signin nav-link btn btn-outline-primary" to="/signin/">{t('header.btns.btn1')}</Link>
               </li>
               <li className="menu__list-item menu__register nav-item">
-                <Link className="menu__link menu__link-signup nav-link btn btn-primary" to="/accounts/register/">{t('header.btns.btn2')}</Link>
+                <Link className="menu__link menu__link-signup nav-link btn btn-primary" to="/registration/">{t('header.btns.btn2')}</Link>
               </li>
               <li className="menu__list-item nav-item menu__language" onClick={() => changeLanguage('en')} >
                 <img className="menu__language-img" src={en} alt="English flag" />

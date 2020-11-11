@@ -3,7 +3,7 @@ import { handleActions } from 'redux-actions';
 import * as actions from '../actions/index';
 import {videoListCss} from '../components/Courses/listOfCssVideos.js'
 import {videoListHtml} from '../components/Courses/listOfHtmlVideos.js'
-import {videoListJs} from '../components/Courses/listOfJSVideos.js';
+import {videoListJs} from '../components/Courses/listOfJsVideos.js';
 import {videoListBootstrap} from '../components/Courses/listOfBootstrapVideos.js';
 
 const video = handleActions({
