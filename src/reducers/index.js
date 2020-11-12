@@ -6,6 +6,36 @@ import {videoListHtml} from '../components/Courses/listOfHtmlVideos.js'
 import {videoListJs} from '../components/Courses/listOfJsVideos.js';
 import {videoListBootstrap} from '../components/Courses/listOfBootstrapVideos.js';
 
+const authorization = handleActions({
+  [actions.signInRequest]() {
+    return 'requested';
+  },
+  [actions.signInFailure]() {
+    return 'failed';
+  },
+  [actions.signInSuccess]() {
+    return 'finished';
+  },
+}, 'none');
+
+const registration = handleActions({
+  [actions.registrationRequest]() {
+    return 'requested';
+  },
+  [actions.registrationSuccess]() {
+    return 'failed';
+  },
+  [actions.registrationFailure]() {
+    return 'finished';
+  },
+}, 'none');
+
+const userData = handleActions({
+  [actions.signInSuccess](state) {
+    return { ...state, isLoggedIn: true };
+  },
+}, {isLoggedIn: false});
+
 const video = handleActions({
   [actions.changeCurrentVideo](state, { payload: { newVideo, type, language } }) {
     const oldData = state[type][language]
@@ -30,6 +60,10 @@ const video = handleActions({
   }
 });
 
+
 export default combineReducers({
   video,
+  authorization,
+  registration,
+  userData
 });
