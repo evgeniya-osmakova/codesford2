@@ -1,8 +1,8 @@
 import React from 'react';
+import _ from 'lodash';
 import './Problems.scss';
 import './Main.scss';
 import {useTranslation} from 'react-i18next';
-import {useSelector} from 'react-redux';
 import cn from 'classnames';
 
 function Problems() {
@@ -10,12 +10,12 @@ function Problems() {
 
   const currentLanguage = i18n.language;
 
-  const problem = (className, numer, item) => {
+  const problem = (className, number, item) => {
     const btnClass = cn("user-problems__problem", "pb-4", className);
     return (
-      <div className={btnClass}>
+      <div className={btnClass} key={_.uniqueId()}>
         <div className="user-problems__background">
-          <div className="user-problems__num">0{numer}</div>
+          <div className="user-problems__num">0{number}</div>
           <div className="user-problems__description">{item}</div>
         </div>
       </div>

@@ -20,29 +20,27 @@ const Loader = () => (
 function App() {
   return (
     <Suspense fallback={<Loader />}>
-      <main className="main">
-        <BrowserRouter>
-          <Header />
-          <Switch>
-            <Route exact path="/">
-              <Main />
-            </Route>
-            <Route path="/crew">
-              <Team />
-            </Route>
-            <Route path="/study">
-              <Courses />
-            </Route>
-            <Route path="/registration/">
-              <Registration />
-            </Route>
-            <Route path="/signin/">
-              <SignIn />
-            </Route>
-          </Switch>
-          <Footer />
-        </BrowserRouter>
-      </main>
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Main />
+          </Route>
+          <Route path="/crew">
+            <Team />
+          </Route>
+          <Route path="/study">
+            <Courses />
+          </Route>
+          <Route path="/registration/">
+            <Registration />
+          </Route>
+          <Route path="/signin/">
+            <SignIn />
+          </Route>
+        </Switch>
+        <Footer />
+      </BrowserRouter>
     </Suspense>
   );
 }

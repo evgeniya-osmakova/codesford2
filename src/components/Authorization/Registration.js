@@ -3,10 +3,21 @@ import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
 import bonus from './img/bonus.svg';
 import './autorization.scss';
+import {useDispatch} from 'react-redux';
+import {registration} from '../../actions';
 
 function Registration() {
 
   const { t } = useTranslation();
+
+  const dispatch = useDispatch();
+
+  const tryToRegister = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const { username, first_name, last_name, email, password1, password2 } = Object.fromEntries(formData);
+    registration({ username, first_name, last_name, email, password1, password2 })(dispatch);
+  }
 
   return (
     <section className="sections-registration section section-icons center">
@@ -22,7 +33,7 @@ function Registration() {
           </div>
           <div className="col s12 m6">
             <h3 className="header-reasons">{t('registration.header')}</h3>
-            <form action="" method="POST">
+            <form action="" method="POST" onSubmit={tryToRegister}>
                 <p>
                   <label htmlFor="id_username" className="">{t('registration.formFields.field1.text')}</label>
                   <input type="text" name="username" maxLength="150" autoFocus="" required="" id="id_username" />

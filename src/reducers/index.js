@@ -31,10 +31,10 @@ const registration = handleActions({
 }, 'none');
 
 const userData = handleActions({
-  [actions.signInSuccess](state) {
-    return { ...state, isLoggedIn: true };
+  [actions.signInSuccess](state, {payload: { id }}) {
+    return { ...state, isLoggedIn: true, id };
   },
-}, {isLoggedIn: false});
+}, {isLoggedIn: false, id: null });
 
 const video = handleActions({
   [actions.changeCurrentVideo](state, { payload: { newVideo, type, language } }) {

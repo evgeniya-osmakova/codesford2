@@ -14,24 +14,28 @@ export const registrationRequest = createAction('REGISTRATION_REQUEST');
 export const registrationSuccess = createAction('REGISTRATION_SUCCESS');
 export const registrationFailure = createAction('REGISTRATION_FAILURE');
 
-export const signIn = ({ login, password }) => async (dispatch) => {
+export const signIn = (username, password) => async (dispatch) => {
+  console.log(username, password)
   dispatch(signInRequest());
   try {
-    const url = routes.taskUrl(task.id);
-    await axios.delete(url);
-    dispatch(signInSuccess({ id: task.id }));
+    const url = routes.signInUrl();
+    const response = await axios.post(url, { username, password });
+    const { id } = response.data;
+    dispatch(signInSuccess({ id }));
   } catch (e) {
+    console.log(e.response);
+    console.log(e.request);
     dispatch(signInFailure());
     throw e;
   }
 };
 
-export const registration = ({ login, password }) => async (dispatch) => {
+export const registration = (username, first_name, last_name, email, password1, password2) => async (dispatch) => {
   dispatch(registrationRequest());
   try {
-    const url = routes.taskUrl(task.id);
+    const url = routes.registrationUrl();
     await axios.post(url);
-    dispatch(registrationSuccess({ id: task.id }));
+    dispatch(registrationSuccess());
   } catch (e) {
     dispatch(registrationFailure());
     throw e;

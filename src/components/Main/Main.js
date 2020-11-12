@@ -17,7 +17,7 @@ function Main() {
   const { t, i18n } = useTranslation();
 
   return (
-    <body>
+    <main>
       <div className="scroll-indicator" id="section01" data-scroll-indicator-title="Main"/>
       <Carousel />
 
@@ -115,7 +115,7 @@ function Main() {
       <div className="scroll-indicator" id="section10" data-scroll-indicator-title="Contacts"/>
 
       <Map />
-    </body>
+    </main>
   );
 }
 
