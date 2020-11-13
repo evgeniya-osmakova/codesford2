@@ -12,9 +12,9 @@ function About() {
 
   const url = () => {
     switch (currentLanguage) {
-      case ('ru' || 'ru-RU'):
+      case ('ru'):
         return "https://www.youtube.com/embed/UnINyd6jVqY?iv_load_policy=3&showinfo=0&controls=0"
-      case ('en' || 'en-En'):
+      case ('en'):
         return "https://www.youtube.com/embed/0g-pZWXpqhw?iv_load_policy=3&amp;showinfo=0&amp;controls=0"
       default:
         throw new Error(`Unknown language: '${currentLanguage}'!`);
