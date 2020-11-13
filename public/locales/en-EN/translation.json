@@ -3,7 +3,8 @@
     "header": "Sign In",
     "placeholder1": "Username",
     "placeholder2": "Password",
-    "link": "Register"
+    "link": "Register",
+    "error": "Incorrect email or password"
   },
   "registration": {
     "header": "Registration",
@@ -31,7 +32,8 @@
       }
     },
     "btn": "Register",
-    "link": "Already have an account"
+    "link": "Already have an account",
+    "error": "User with this email is already registered"
   },
   "header": {
     "menu": {
