@@ -1,37 +1,23 @@
 {
   "signIn": {
     "header": "Sign In",
-    "placeholder1": "Username",
-    "placeholder2": "Password",
+    "formFields": {
+      "field1": "Email",
+      "field2": "Password"
+    },
     "link": "Register",
     "error": "Incorrect email or password"
   },
   "registration": {
-    "header": "Registration",
-    "reasons": {
-      "title": "That's why you need to register:",
-      "reason1": "To have full access to education courses."
-    },
+    "header": "Sign up",
     "formFields": {
-      "field1": {
-        "text": "Username:",
-        "requirement": "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
-      },
-      "field2": "First name:",
-      "field3": "Last name:",
-      "field4": "Email address:",
-      "field5": {
-        "text": "Password:",
-        "requirement1": "Your password can’t be too similar to your other personal information.",
-        "requirement2": "Your password must contain at least 8 characters.",
-        "requirement3": "Your password can’t be entirely numeric."
-      },
-      "field6": {
-        "text": "Password confirmation:",
-        "requirement": "Enter the same password as before, for verification."
-      }
+      "field1": "Name",
+      "field2": "Last name",
+      "field3": "Email",
+      "field4": "Password",
+      "field5": "Confirm your password"
     },
-    "btn": "Register",
+    "text": "Your password can’t be too similar to your other personal information. Your password must contain at least 8 characters. Your password can’t be a commonly used password. Your password can’t be entirely numeric.",
     "link": "Already have an account",
     "error": "User with this email is already registered"
   },

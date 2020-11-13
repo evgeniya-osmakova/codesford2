@@ -1,78 +1,141 @@
 import React from 'react';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
-import bonus from './img/bonus.svg';
-import './autorization.scss';
+import './registration.scss';
 import {useDispatch} from 'react-redux';
 import {registration} from '../../actions';
 
-function Registration() {
+const signInSchema = Yup.object().shape({
+  name: Yup.string()
+    .required("Name is required"),
+  last_name: Yup.string()
+    .required("Last name is required"),
+  email: Yup.string().email().required("Email is required"),
+  password: Yup.string()
+    .required("Password is required")
+    .min(8, "Password is too short - should be 8 chars min"),
+  passwordConfirmation: Yup.string()
+    .oneOf([Yup.ref('password'), null], 'Passwords must match')
+    .required("Password is required")
+});
+
+const initialValues = {
+  name: "",
+  last_name: "",
+  email: "",
+  password: "",
+  passwordConfirmation: ""
+};
+
+const Registration = () => {
 
   const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch();
 
-  const tryToRegister = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const { username, first_name, last_name, email, password1, password2 } = Object.fromEntries(formData);
-    registration({ username, first_name, last_name, email, password1, password2 })(dispatch);
+  const tryToRegister = (values) => {
+    const { name, last_name, email, password, passwordConfirmation } = values;
+    registration({ name, last_name, email, password, passwordConfirmation })(dispatch);
   }
 
   return (
-    <section className="sections-registration section section-icons center">
-      <div className="container">
-        <div className="row">
-          <div className="col s12 m6">
-            <h4 className="header-reasons">{t('registration.reasons.title')}</h4>
-            <ul className="registration-reasons">
-              <li className="reasons-item">
-                <img src={bonus} />{t('registration.reasons.reason1')}
-              </li>
-            </ul>
-          </div>
-          <div className="col s12 m6">
-            <h3 className="header-reasons">{t('registration.header')}</h3>
-            <form action="" method="POST" onSubmit={tryToRegister}>
-                <p>
-                  <label htmlFor="id_username" className="">{t('registration.formFields.field1.text')}</label>
-                  <input type="text" name="username" maxLength="150" autoFocus="" required="" id="id_username" />
-                  <span className="helptext">{t('registration.formFields.field1.requirement')}</span>
-                </p>
-                <p>
-                  <label htmlFor="id_first_name">{t('registration.formFields.field2')}</label>
-                  <input type="text" name="first_name" maxLength="30" id="id_first_name" />
-                </p>
-                <p>
-                  <label htmlFor="id_last_name">{t('registration.formFields.field3')}</label>
-                  <input type="text" name="last_name" maxLength="150" id="id_last_name" />
-                </p>
-                <p>
-                  <label htmlFor="id_email">{t('registration.formFields.field4')}</label>
-                  <input type="email" name="email" maxLength="254" id="id_email" />
-                </p>
-                <p>
-                  <label htmlFor="id_password1">{t('registration.formFields.field5.text')}</label>
-                  <input type="password" name="password1" autoComplete="new-password" required="" id="id_password1" />
-                  <span className="helptext"/>
-                </p>
-                <ul>
-                  <li>{t('registration.formFields.field5.requirement1')}</li>
-                  <li>{t('registration.formFields.field5.requirement2')}</li>
-                  <li>{t('registration.formFields.field5.requirement3')}</li>
-                </ul>
-                <p>
-                  <label htmlFor="id_password2">{t('registration.formFields.field6.text')}</label>
-                  <input type="password" name="password2" autoComplete="new-password" required="" id="id_password2" />
-                  <span className="helptext">{t('registration.formFields.field5.requirement')}</span>
-                </p>
-                <button type="submit" className="btn-reg waves-effect waves-light btn">{t('registration.btn')}</button>
-                <Link className="have-account" to="/signin">{t('registration.link')}</Link>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div className="form">
+      <Formik
+        initialValues={initialValues}
+        validationSchema={signInSchema}
+        onSubmit={(values) => {
+          tryToRegister(values);
+        }}
+      >
+        {(formik) => {
+          const { errors, touched, isValid, dirty } = formik;
+          return (
+            <div className="registration">
+              <h1>{t('registration.header')}</h1>
+              <Form className="registration-form">
+                <div className="form-row">
+                  <label htmlFor="name">{t('registration.formFields.field1')}</label>
+                  <Field
+                    type="text"
+                    name="name"
+                    id="name"
+                    className={
+                      errors.name && touched.name ? "input-error" : null
+                    }
+                  />
+                  <ErrorMessage name="name" component="span" className="error" />
+                </div>
+
+                <div className="form-row">
+                  <label htmlFor="last_name">{t('registration.formFields.field2')}</label>
+                  <Field
+                    type="text"
+                    name="last_name"
+                    id="last_name"
+                    className={
+                      errors.last_name && touched.last_name ? "input-error" : null
+                    }
+                  />
+                  <ErrorMessage name="last_name" component="span" className="error" />
+                </div>
+
+                <div className="form-row">
+                  <label htmlFor="email">{t('registration.formFields.field3')}</label>
+                  <Field
+                    type="email"
+                    name="email"
+                    id="email"
+                    className={
+                      errors.email && touched.email ? "input-error" : null
+                    }
+                  />
+                  <ErrorMessage name="email" component="span" className="error" />
+                </div>
+
+                <div className="form-row">
+                  <label htmlFor="password">{t('registration.formFields.field4')}</label>
+                  <Field
+                    type="password"
+                    name="password"
+                    id="password"
+                    className={
+                      errors.password && touched.password ? "input-error" : null
+                    }
+                  />
+                  <ErrorMessage
+                    name="password" component="span" className="error"
+                  />
+                </div>
+
+                <div className="form-row">
+                  <label htmlFor="passwordConfirmation">{t('registration.formFields.field5')}</label>
+                  <Field
+                    type="password"
+                    name="passwordConfirmation"
+                    id="passwordConfirmation"
+                    className={
+                      errors.passwordConfirmation && touched.passwordConfirmation ? "input-error" : null
+                    }
+                  />
+                  <ErrorMessage
+                    name="passwordConfirmation" component="span" className="error"
+                  />
+                </div>
+
+                <button type="submit"
+                  className={!(dirty && isValid) ? "disabled-btn" : ""}
+                  disabled={!(dirty && isValid)}>
+                  {t('registration.header')}
+                </button>
+              </Form>
+              <Link className="form-link" to="/signin">{t('registration.link')}</Link>
+            </div>
+          );
+        }}
+      </Formik>
+    </div>
   );
 }
 

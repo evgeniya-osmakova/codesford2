@@ -23,6 +23,7 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "formik": "^2.2.5",
     "i18next": "^19.8.3",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.0.21",
@@ -41,7 +42,8 @@
     "redux-actions": "^2.6.5",
     "redux-thunk": "^2.3.0",
     "svgo-loader": "^2.2.1",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "css-loader": "^5.0.0",
