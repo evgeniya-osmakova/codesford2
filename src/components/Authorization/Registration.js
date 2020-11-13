@@ -8,7 +8,7 @@ import {registration} from '../../actions';
 
 function Registration() {
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch();
 

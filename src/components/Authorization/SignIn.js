@@ -7,7 +7,7 @@ import {signIn} from '../../actions';
 
 function SignIn() {
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch();
 
