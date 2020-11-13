@@ -16,7 +16,11 @@ i18n
     backend:{
       loadPath: 'public/locales/{{lng}}/{{ns}}.json',
     },
-    fallbackLng: 'en-EN',
+    fallbackLng: {
+      'ru-RU': ['ru'],
+      'en-EN': ['en'],
+      'default': ['en']
+    },
     debug: true,
 
     interpolation: {

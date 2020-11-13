@@ -24,11 +24,11 @@ function Problems() {
 
   const problemList = () => {
     switch (currentLanguage) {
-      case ('ru-RU'): {
+      case ('ru'): {
         const problems = [t('problems.problem1'), t('problems.problem2'), t('problems.problem3'), t('problems.problem4')]
         return problems.map((item, index) => problem('col-md-3', index + 1, item))
       }
-      case ('en-EN'): {
+      case ('en'): {
         const problems = [t('problems.problem1'), t('problems.problem2'), t('problems.problem3')]
         return problems.map((item, index) => problem('col-md-4', index + 1, item))
       }
