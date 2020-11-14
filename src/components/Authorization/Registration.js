@@ -4,30 +4,8 @@ import * as Yup from "yup";
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
 import './registration.scss';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {registration} from '../../actions';
-
-const signInSchema = Yup.object().shape({
-  name: Yup.string()
-    .required("Name is required"),
-  last_name: Yup.string()
-    .required("Last name is required"),
-  email: Yup.string().email().required("Email is required"),
-  password: Yup.string()
-    .required("Password is required")
-    .min(8, "Password is too short - should be 8 chars min"),
-  passwordConfirmation: Yup.string()
-    .oneOf([Yup.ref('password'), null], 'Passwords must match')
-    .required("Password is required")
-});
-
-const initialValues = {
-  name: "",
-  last_name: "",
-  email: "",
-  password: "",
-  passwordConfirmation: ""
-};
 
 const Registration = () => {
 
@@ -35,9 +13,43 @@ const Registration = () => {
 
   const dispatch = useDispatch();
 
+  const signInSchema = Yup.object().shape({
+    name: Yup.string()
+      .required(t('registration.validation_errors.error1')),
+    last_name: Yup.string()
+      .required(t('registration.validation_errors.error2')),
+    email: Yup.string().email().required(t('registration.validation_errors.error3')),
+    password: Yup.string()
+      .required(t('registration.validation_errors.error4'))
+      .min(8, t('registration.validation_errors.error5'))
+      .matches(/^(?=.*[a-z])(?=.*[0-9])/, t('registration.validation_errors.error6')),
+    passwordConfirmation: Yup.string()
+      .oneOf([Yup.ref('password'), null], t('registration.validation_errors.error7'))
+      .required(t('registration.validation_errors.error4'))
+  });
+
+  const initialValues = {
+    name: "",
+    last_name: "",
+    email: "",
+    password: "",
+    passwordConfirmation: ""
+  };
+
   const tryToRegister = (values) => {
     const { name, last_name, email, password, passwordConfirmation } = values;
     registration({ name, last_name, email, password, passwordConfirmation })(dispatch);
+  }
+
+  const registration_error = useSelector((state) => state.registration);
+
+  const showError = () => {
+    if (registration_error === 'request_error') {
+      return (<p className="error">{t('registration.request_error')}</p>)
+    }
+    if (registration_error === 'response_error') {
+      return (<p className="error">{t('registration.response_error')}</p>)
+    }
   }
 
   return (
@@ -54,6 +66,7 @@ const Registration = () => {
           return (
             <div className="registration">
               <h1>{t('registration.header')}</h1>
+              {showError()}
               <Form className="registration-form">
                 <div className="form-row">
                   <label htmlFor="name">{t('registration.formFields.field1')}</label>
@@ -124,6 +137,18 @@ const Registration = () => {
                   />
                 </div>
 
+                <p className="password-requirement">
+                  {t('registration.requirement.text1')}
+                </p>
+                <p className="password-requirement">
+                  {t('registration.requirement.text2')}
+                </p>
+                <p className="password-requirement">
+                  {t('registration.requirement.text3')}
+                </p>
+                <p className="password-requirement">
+                  {t('registration.requirement.text4')}
+                </p>
                 <button type="submit"
                   className={!(dirty && isValid) ? "disabled-btn" : ""}
                   disabled={!(dirty && isValid)}>

@@ -22,22 +22,23 @@ export const signIn = (username, password) => async (dispatch) => {
     const response = await axios.post(url, { username, password });
     const { id } = response.data;
     dispatch(signInSuccess({ id }));
-  } catch (e) {
-    console.log(e.response);
-    console.log(e.request);
-    dispatch(signInFailure());
-    throw e;
+  } catch (err) {
+    console.log(err.response);
+    console.log(err.request);
+    dispatch(signInFailure({err}));
   }
 };
 
-export const registration = (username, first_name, last_name, email, password1, password2) => async (dispatch) => {
+export const registration = (name, last_name, email, password, passwordConfirmation) => async (dispatch) => {
   dispatch(registrationRequest());
   try {
     const url = routes.registrationUrl();
-    await axios.post(url);
+    const response = await axios.post(url, { name, last_name, email, password, passwordConfirmation });
     dispatch(registrationSuccess());
-  } catch (e) {
-    dispatch(registrationFailure());
-    throw e;
+  } catch (err) {
+    console.log(err);
+    console.log(err.response);
+    console.log(err.request);
+    dispatch(registrationFailure({err}));
   }
 };

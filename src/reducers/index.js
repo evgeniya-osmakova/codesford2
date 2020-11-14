@@ -10,8 +10,11 @@ const authorization = handleActions({
   [actions.signInRequest]() {
     return 'requested';
   },
-  [actions.signInFailure]() {
-    return 'failed';
+  [actions.signInFailure](state, {payload: { err }}) {
+    if (err.response) {
+      return 'response_error'
+    }
+    return 'request_error';
   },
   [actions.signInSuccess]() {
     return 'finished';
@@ -23,10 +26,13 @@ const registration = handleActions({
     return 'requested';
   },
   [actions.registrationSuccess]() {
-    return 'failed';
-  },
-  [actions.registrationFailure]() {
     return 'finished';
+  },
+  [actions.registrationFailure](state, {payload: { err }}) {
+    if (err.response) {
+      return 'response_error'
+    }
+    return 'request_error';
   },
 }, 'none');
 

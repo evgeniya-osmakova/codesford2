@@ -29,7 +29,7 @@ function Team() {
   const { t, i18n } = useTranslation();
 
   return (
-    <body>
+    <main>
       <section className="team-page">
         <div className="container">
           <div className="row pt-4">
@@ -272,7 +272,7 @@ function Team() {
           </div>
         </div>
       </section>
-    </body>
+    </main>
   );
 }
 

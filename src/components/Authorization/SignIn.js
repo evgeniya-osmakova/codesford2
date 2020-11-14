@@ -4,19 +4,8 @@ import * as Yup from "yup";
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
 import './registration.scss';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {signIn} from '../../actions';
-
-const signInSchema = Yup.object().shape({
-  email: Yup.string().email().required("Email is required"),
-  password: Yup.string()
-    .required("Password is required")
-});
-
-const initialValues = {
-  email: "",
-  password: "",
-};
 
 const Authorization = () => {
 
@@ -24,9 +13,31 @@ const Authorization = () => {
 
   const dispatch = useDispatch();
 
+  const signInSchema = Yup.object().shape({
+    email: Yup.string().email().required(t('registration.validation_errors.error3')),
+    password: Yup.string()
+      .required(t('registration.validation_errors.error4'))
+  });
+
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+
   const tryToSignIn = (values) => {
     const { username, password } = values;
     signIn({ username, password })(dispatch);
+  }
+
+  const authorization_error = useSelector((state) => state.authorization);
+
+  const showError = () => {
+    if (authorization_error === 'request_error') {
+      return (<p className="error">{t('signIn.request_error')}</p>)
+    }
+    if (authorization_error === 'response_error') {
+      return (<p className="error">{t('signIn.response_error')}</p>)
+    }
   }
 
   return (
@@ -43,6 +54,7 @@ const Authorization = () => {
           return (
             <div className="registration">
               <h1>{t('signIn.header')}</h1>
+              {showError()}
               <Form className="registration-form">
 
                 <div className="form-row">
