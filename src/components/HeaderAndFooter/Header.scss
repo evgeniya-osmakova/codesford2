@@ -1,0 +1,73 @@
+@import "../../../src/vars.scss";
+@import "../common.scss";
+
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__left {
+    padding-left: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 78px;
+  }
+
+  &__right {
+    padding-right: 26px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 21px;
+  }
+}
+
+.sidebar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 46px;
+
+  &__item {
+    color: $main-color;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+  }
+}
+
+.header-right {
+  &__item {
+    text-decoration: none;
+  }
+}
+.header-profile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: black;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+
+  &__text {
+    color: $main-color;
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+.logo {
+  &__img {
+    padding-top: 10px;
+  }
+}
