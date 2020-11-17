@@ -1,14 +1,15 @@
 import React, {Component, Suspense} from 'react';
-// import '../styles/vacancy_adding.scss';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import { useTranslation, withTranslation, Trans } from 'react-i18next';
-import Header from './Header_and_Footer/Header.js';
-import Footer from './Header_and_Footer/Footer.js';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import Header from './HeaderAndFooter/Header.js';
+import Footer from './HeaderAndFooter/Footer.js';
 import Main from './Main/Main.js';
 import Team from './Team/Team.js';
 import Courses from './Courses/Courses.js';
 import Registration from './Authorization/Registration.js';
 import SignIn from './Authorization/SignIn.js';
+import NotFound from './NotFound/NotFound.js';
+import {useSelector} from 'react-redux';
+import Profile from './PersonalPage/Profile.js';
 
 const Loader = () => (
   <div className="App">
@@ -16,8 +17,9 @@ const Loader = () => (
   </div>
 );
 
-
 function App() {
+  const isLoggedIn = useSelector((state) => state.userData.isLoggedIn);
+
   return (
     <Suspense fallback={<Loader />}>
       <BrowserRouter>
@@ -37,6 +39,12 @@ function App() {
           </Route>
           <Route path="/signin/">
             <SignIn />
+          </Route>
+          <Route path="/profile/">
+            {(isLoggedIn) ? <Profile /> : <Redirect push to="/signin" />}
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
         <Footer />

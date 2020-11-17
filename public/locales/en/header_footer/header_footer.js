@@ -3,7 +3,7 @@ export default {
     menu: {
       link1: 'Main',
       link2: 'Study',
-      link3: 'Team'
+      link3: 'About us'
     },
     btns: {
       btn1: 'Sign In',

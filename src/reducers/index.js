@@ -36,11 +36,29 @@ const registration = handleActions({
   },
 }, 'none');
 
-const userData = handleActions({
-  [actions.signInSuccess](state, {payload: { id }}) {
-    return { ...state, isLoggedIn: true, id };
+const updating = handleActions({
+  [actions.updatingRequest]() {
+    return 'requested';
   },
-}, {isLoggedIn: false, id: null });
+  [actions.updatingSuccess]() {
+    return 'finished';
+  },
+  [actions.updatingFailure](state, {payload: { err }}) {
+    if (err.response) {
+      return 'response_error'
+    }
+    return 'request_error';
+  },
+}, 'none');
+
+const userData = handleActions({
+  [actions.signInSuccess](state, {payload: { id, first_name, last_name, email }}) {
+    return { ...state, isLoggedIn: true, id, first_name, last_name, email };
+  },
+  [actions.updatingSuccess](state, { payload: { name, last_name }}) {
+    return { ...state, first_name: name, last_name: last_name };
+  },
+}, {isLoggedIn: true, id: null, first_name: 'Ivan', last_name: 'Ivanov', email: '' });
 
 const video = handleActions({
   [actions.changeCurrentVideo](state, { payload: { newVideo, type, language } }) {
@@ -71,5 +89,6 @@ export default combineReducers({
   video,
   authorization,
   registration,
+  updating,
   userData
 });

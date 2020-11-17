@@ -8,7 +8,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     publicPath: './',
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/build'),
     filename: 'result.js',
   },
   devServer: {

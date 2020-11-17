@@ -2,10 +2,10 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import {useTranslation} from 'react-i18next';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import './registration.scss';
 import {useDispatch, useSelector} from 'react-redux';
-import {registration} from '../../actions';
+import {registration, registrationSuccess} from '../../actions';
 
 const Registration = () => {
 
@@ -36,18 +36,24 @@ const Registration = () => {
     passwordConfirmation: ""
   };
 
+  const registration_state = useSelector((state) => state.registration);
+
+  let history = useHistory();
+
   const tryToRegister = (values) => {
-    const { name, last_name, email, password, passwordConfirmation } = values;
-    registration({ name, last_name, email, password, passwordConfirmation })(dispatch);
+    const { first_name, last_name, email, password, passwordConfirmation } = values;
+    registration({ first_name }, { last_name }, { email },
+      { password }, { passwordConfirmation })(dispatch);
+    if ( registration_state === 'finished') {
+      history.push('/');
+    }
   }
 
-  const registration_error = useSelector((state) => state.registration);
-
   const showError = () => {
-    if (registration_error === 'request_error') {
+    if (registration_state === 'request_error') {
       return (<p className="error">{t('registration.request_error')}</p>)
     }
-    if (registration_error === 'response_error') {
+    if (registration_state === 'response_error') {
       return (<p className="error">{t('registration.response_error')}</p>)
     }
   }
@@ -69,16 +75,16 @@ const Registration = () => {
               {showError()}
               <Form className="registration-form">
                 <div className="form-row">
-                  <label htmlFor="name">{t('registration.formFields.field1')}</label>
+                  <label htmlFor="first_name">{t('registration.formFields.field1')}</label>
                   <Field
                     type="text"
-                    name="name"
-                    id="name"
+                    name="first_name"
+                    id="first_name"
                     className={
-                      errors.name && touched.name ? "input-error" : null
+                      errors.first_name && touched.first_name ? "input-error" : null
                     }
                   />
-                  <ErrorMessage name="name" component="span" className="error" />
+                  <ErrorMessage name="first_name" component="span" className="error" />
                 </div>
 
                 <div className="form-row">

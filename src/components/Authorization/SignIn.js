@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import {useTranslation} from 'react-i18next';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import './registration.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import {signIn} from '../../actions';
@@ -24,18 +24,23 @@ const Authorization = () => {
     password: "",
   };
 
+  let history = useHistory();
+
+  const authorization_state = useSelector((state) => state.authorization);
+
   const tryToSignIn = (values) => {
     const { username, password } = values;
-    signIn({ username, password })(dispatch);
+    signIn({ username }, { password })(dispatch);
+    if ( authorization_state === 'finished') {
+      history.push('/');
+    }
   }
 
-  const authorization_error = useSelector((state) => state.authorization);
-
   const showError = () => {
-    if (authorization_error === 'request_error') {
+    if (authorization_state === 'request_error') {
       return (<p className="error">{t('signIn.request_error')}</p>)
     }
-    if (authorization_error === 'response_error') {
+    if (authorization_state === 'response_error') {
       return (<p className="error">{t('signIn.response_error')}</p>)
     }
   }

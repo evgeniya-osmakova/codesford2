@@ -3,7 +3,7 @@ export default {
     menu: {
       link1: 'Главная',
       link2: 'Учиться',
-      link3: 'Команда'
+      link3: 'О нас'
     },
     btns: {
       btn1: 'Войти',
