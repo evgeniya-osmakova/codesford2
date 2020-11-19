@@ -21,6 +21,11 @@ export default {
       position: 'Junior Front End Developer',
       city: 'Москва'
     },
+    alex: {
+      name: 'Алексей',
+      position: 'Junior Full Stack Developer',
+      city: 'Москва'
+    },
     alesya: {
       name: 'Алеся',
       position: 'Junior Digital Designer',

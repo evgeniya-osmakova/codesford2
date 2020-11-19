@@ -6,6 +6,7 @@ import evgeniya from '../Main/img/Evgeniya.png';
 import jane from '../Main/img/Jane.png';
 import marie from '../Main/img/Marie.jpg';
 import oleg from './img/Oleg.jpg';
+import alex from '../Main/img/Alex.png';
 import twitter from './img/twitter.svg';
 import telegram from './img/telegram.svg';
 import github from './img/github.svg';
@@ -21,6 +22,7 @@ import AlesyaUniverEn from './img/AlesyaUniverEn.png';
 import janeUniverEn from './img/janeUniverEn.png';
 import jhonUniver from './img/jhonUniver.png';
 import marieUniverEn from './img/marieUniverEn.png';
+import AlexUniver from './img/AlexUniver.jpg';
 import mgsu from './img/mgsu.png';
 import {useTranslation} from 'react-i18next';
 
@@ -192,6 +194,44 @@ function Team() {
                   <li>{t('teamPage.evgeniya.text4')}</li>
                   <li>{t('teamPage.evgeniya.text5')}</li>
                   <li>{t('teamPage.evgeniya.text6')}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="row pt-4">
+            <div className="team-page__background">
+              <div className="team-page__teammate col-md-2 offset-md-1 text-center">
+                <img className="team-page__image pt-4" src={alex}
+                     alt="Photo of Alex Osipenko" />
+                <p className="team-page__city pt-3 text-black-50">{t('teamPage.alex.city')}</p>
+                <hr />
+                <div className="team-page__social">
+                  <a href="https://github.com/AlexOsipenko" target="_blank">
+                    <img src={github} alt="github"/>
+                  </a>
+                  <a href="https://www.linkedin.com/in/alex-osipenko-a64ba41b2/" target="_blank">
+                    <img src={linkedin} alt="linkedin"/>
+                  </a>
+                  <a href="https://stackoverflow.com/users/14517056/alex-osipenko" target="_blank">
+                    <img src={stack} alt="stack"/>
+                  </a>
+                  <a href="https://www.facebook.com/osipenkoalex1" target="_blank">
+                    <img src={facebook} alt="facebook"/>
+                  </a>
+                </div>
+                <hr />
+                <img className="team-page__university" src={AlexUniver} alt="university"/>
+                <img className="team-page__stack pb-4" src={jhonStack} alt="stack"/>
+              </div>
+              <div className="team-page__teammate col-md-7 offset-sm-1">
+                <h3 className="team-page__name pt-4">{t('teamPage.alex.name')}</h3>
+                <p className="team-page__position text-black-50">{t('teamPage.alex.position')}</p>
+                <p className="team-page__description">{t('teamPage.alex.text1')}</p>
+                <ul className="team-page__description pl-3">
+                  <li>{t('teamPage.alex.text2')}</li>
+                  <li>{t('teamPage.alex.text3')}</li>
+                  <li>{t('teamPage.alex.text4')}</li>
+                  <li>{t('teamPage.alex.text5')}</li>
                 </ul>
               </div>
             </div>

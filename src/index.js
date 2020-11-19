@@ -25,15 +25,15 @@ const history = createBrowserHistory();
 let root = document.getElementById('root');
 
 if (root) {
-  // 1. Set up the browser history with the updated location
-  // (minus the # sign)
-  const path = (/#!(\/.*)$/.exec(location.hash) || [])[1];
-  console.log(path)
-  console.log(history)
-  if (path) {
-    // location.pathname = `http://frontend-cf-test.s3-website-us-east-1.amazonaws.com/${path}`;
-    history.replace(path);
-  }
+  // // 1. Set up the browser history with the updated location
+  // // (minus the # sign)
+  // const path = (/#!(\/.*)$/.exec(location.hash) || [])[1];
+  // console.log(path)
+  // console.log(history)
+  // if (path) {
+  //   // location.pathname = `http://frontend-cf-test.s3-website-us-east-1.amazonaws.com/${path}`;
+  //   history.replace(path);
+  // }
 
   // 2. Render our app
   ReactDOM.render(

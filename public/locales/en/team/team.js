@@ -44,6 +44,16 @@ export default {
       text5: 'Using the Vue and React frameworks;',
       text6: 'Testing with Jest.'
     },
+    alex: {
+      name: 'Alex Osipenko',
+      position: 'Junior Full Stack Developer',
+      city: 'Moscow',
+      text1: 'Alex joined a startup as a Junior Full Stack Developer.',
+      text2: 'Alex has graduated from the Moscow school of programming;',
+      text3: 'he studied IT technologies Yandex, MIPT at coursera;',
+      text4: 'currently Alex studies IT technologies at RTU MIREA',
+      text5: 'he has necessary expertise in IT: JavaScript, HTML, CSS, Bootstrap, git, React.',
+    },
     alesya: {
       name: 'Alesya Livanova',
       position: 'Junior Digital Designer',

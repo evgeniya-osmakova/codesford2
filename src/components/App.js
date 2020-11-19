@@ -10,6 +10,10 @@ import SignIn from './Authorization/SignIn.js';
 import NotFound from './NotFound/NotFound.js';
 import {useSelector} from 'react-redux';
 import Profile from './PersonalPage/Profile.js';
+import Html from './Courses/Html.js';
+import Css from './Courses/Css.js';
+import Js from './Courses/Js.js';
+import Bootstrap from './Courses/Bootstrap.js';
 
 const Loader = () => (
   <div className="App">
@@ -39,6 +43,18 @@ function App() {
           </Route>
           <Route path="/signin">
             <SignIn />
+          </Route>
+          <Route path="/study/html">
+            <Html />
+          </Route>
+          <Route path="/study/css">
+            <Css />
+          </Route>
+          <Route path="/study/js">
+            <Js />
+          </Route>
+          <Route path="/study/bootstrap">
+            <Bootstrap />
           </Route>
           <Route path="/profile">
             {(isLoggedIn) ? <Profile /> : <Redirect push to="/signin" />}

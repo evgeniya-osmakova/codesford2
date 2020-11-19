@@ -27,12 +27,12 @@ function CoursesMain() {
     <section className="study">
       <div className="container">
         <div className="row pt-4 text-center justify-content-center">
-          {course('study/html', html, 'HTML5')}
-          {course('study/css', css, 'CSS3')}
+          {course('/study/html', html, 'HTML5')}
+          {course('/study/css', css, 'CSS3')}
         </div>
         <div className="row text-center justify-content-center">
-          {course('study/js', js, 'JavaScript')}
-          {course('study/bootstrap', bootstrap, 'Bootstrap')}
+          {course('/study/js', js, 'JavaScript')}
+          {course('/study/bootstrap', bootstrap, 'Bootstrap')}
         </div>
       </div>
     </section>

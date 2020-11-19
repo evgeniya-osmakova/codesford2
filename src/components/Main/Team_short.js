@@ -6,6 +6,7 @@ import evgeniy from './img/Evgeniy.png';
 import evgeniya from './img/Evgeniya.png';
 import alesya from './img/Alesya.png';
 import jane from './img/Jane.png';
+import alex from './img/Alex.png';
 import './Team_short.scss';
 import './Main.scss';
 import {useTranslation} from 'react-i18next';
@@ -21,7 +22,7 @@ function Team_short() {
         </div>
         <div className="row text-center">
           <div className="team__teammate col-md-4 pb-4 justify-content-center">
-            <Link className="team__teammate-link" to="/crew/">
+            <Link className="team__teammate-link" to="/crew">
               <div className="team__background">
                 <p className="team__position pt-2">{t('team.oleg.position')}</p>
                 <img className="team__image mb-3" src={oleg} alt="Oleg" />
@@ -31,7 +32,7 @@ function Team_short() {
             </Link>
           </div>
           <div className="team__teammate col-md-4 pb-4">
-            <Link className="team__teammate-link" to="/crew/">
+            <Link className="team__teammate-link" to="/crew">
               <div className="team__background">
                 <p className="team__position pt-2">{t('team.marie.position')}</p>
                 <img className="team__image mb-3" src={marie} alt="Maria" />
@@ -41,7 +42,7 @@ function Team_short() {
             </Link>
           </div>
           <div className="team__teammate col-md-4 pb-4">
-            <Link className="team__teammate-link" to="/crew/">
+            <Link className="team__teammate-link" to="/crew">
               <div className="team__background">
                 <p className="team__position pt-2">{t('team.evgeniy.position')}</p>
                 <img className="team__image mb-3" src={evgeniy} alt="John" />
@@ -53,7 +54,7 @@ function Team_short() {
         </div>
         <div className="row text-center">
           <div className="team__teammate col-md-4 pb-4">
-            <Link className="team__teammate-link" to="/crew/">
+            <Link className="team__teammate-link" to="/crew">
               <div className="team__background">
                 <p className="team__position pt-2">{t('team.evgeniya.position')}</p>
                 <img className="team__image mb-3" src={evgeniya} alt="Evgeniya" />
@@ -63,7 +64,17 @@ function Team_short() {
             </Link>
           </div>
           <div className="team__teammate col-md-4 pb-4">
-            <Link className="team__teammate-link" to="/crew/">
+            <Link className="team__teammate-link" to="/crew">
+              <div className="team__background">
+                <p className="team__position pt-2">{t('team.alex.position')}</p>
+                <img className="team__image mb-3" src={alex} alt="Alex" />
+                <p className="team__name mb-0 font-weight-bold">{t('team.alex.name')}</p>
+                <p className="team__city">{t('team.alex.city')}</p>
+              </div>
+            </Link>
+          </div>
+          <div className="team__teammate col-md-4 pb-4">
+            <Link className="team__teammate-link" to="/crew">
               <div className="team__background">
                 <p className="team__position pt-2">{t('team.alesya.position')}</p>
                 <img className="team__image mb-3" src={alesya} alt="Alesya" />
@@ -72,8 +83,11 @@ function Team_short() {
               </div>
             </Link>
           </div>
+        </div>
+
+        <div className="row text-center">
           <div className="team__teammate col-md-4 pb-4">
-            <Link className="team__teammate-link" to="/crew/">
+            <Link className="team__teammate-link" to="/crew">
               <div className="team__background">
                 <p className="team__position pt-2">{t('team.jane.position')}</p>
                 <img className="team__image mb-3" src={jane} alt="Jane" />
@@ -83,6 +97,7 @@ function Team_short() {
             </Link>
           </div>
         </div>
+
       </div>
     </section>
   );

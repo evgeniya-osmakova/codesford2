@@ -37,12 +37,22 @@ export default {
       name: 'Евгения Осмакова',
       position: 'Junior Front End Developer',
       city: 'Москва',
-      text1: 'Пришла в стартап на должность Junior Front End Developer. She has the necessary expertise in IT.',
+      text1: 'Пришла в стартап на должность Junior Front End Developer.',
       text2: 'Front end (HTML, CSS, SCSS, JavaScript, WebPack);',
       text3: 'Back end (Node.js);',
       text4: 'JS игры на canvas;',
       text5: 'Использование фреймворков Vue, React;',
       text6: 'Тестирование с помощью Jest.'
+    },
+    alex: {
+      name: 'Алексей Осипенко',
+      position: 'Junior Full Stack Developer',
+      city: 'Москва',
+      text1: 'Пришел в стартап на должность Junior Full Stack Developer.',
+      text2: 'закончил московскую школу программирования;',
+      text3: 'изучал IT-технологии в Яндексе, МФТИ на coursera;',
+      text4: 'изучает IT-технологии в РТУ МИРЭА;',
+      text5: 'имеется необходимая экспертиза в IT: JavaScript, HTML, CSS, Bootstrap, git, React.',
     },
     alesya: {
       name: 'Алеся Ливанова',
