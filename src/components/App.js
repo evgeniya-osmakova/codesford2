@@ -44,18 +44,6 @@ function App() {
           <Route path="/signin">
             <SignIn />
           </Route>
-          <Route exact path="/study/html">
-            <Html />
-          </Route>
-          <Route exact path="/study/css">
-            <Css />
-          </Route>
-          <Route exact path="/study/js">
-            <Js />
-          </Route>
-          <Route exact path="/study/bootstrap">
-            <Bootstrap />
-          </Route>
           <Route path="/profile">
             {(isLoggedIn) ? <Profile /> : <Redirect push to="/signin" />}
           </Route>
