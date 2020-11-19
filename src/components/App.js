@@ -1,4 +1,4 @@
-import React, {Component, Suspense} from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './HeaderAndFooter/Header.js';
 import Footer from './HeaderAndFooter/Footer.js';
@@ -34,13 +34,13 @@ function App() {
           <Route path="/study">
             <Courses />
           </Route>
-          <Route path="/registration/">
+          <Route path="/registration">
             <Registration />
           </Route>
-          <Route path="/signin/">
+          <Route path="/signin">
             <SignIn />
           </Route>
-          <Route path="/profile/">
+          <Route path="/profile">
             {(isLoggedIn) ? <Profile /> : <Redirect push to="/signin" />}
           </Route>
           <Route path="*">

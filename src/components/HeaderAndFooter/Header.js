@@ -5,11 +5,13 @@ import logo from './img/logo.svg';
 import avatar from './img/ava.svg';
 import en from './img/en.svg';
 import ru from './img/ru.svg';
+import burger from './img/burger.svg';
 import {useTranslation} from 'react-i18next';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import * as allActions from '../../actions';
+import ModalMenu from './ModalMenu.js';
 
 function Header() {
-  const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
 
   let history = useHistory();
@@ -23,8 +25,19 @@ function Header() {
   const isLoggedIn = useSelector((state) => state.userData.isLoggedIn);
   const fullName = `${userData.first_name} ${userData.last_name}`;
 
+  const dispatch = useDispatch();
+
+  const currentState = useSelector((state) => state.appState);
+
+  const showMenu = () => {
+    dispatch(allActions.changeState({newState: 'modalMenu'}));
+  }
+
   return (
     <header className="header">
+
+      {(currentState === 'modalMenu') ? <ModalMenu /> : ''}
+
       <div className="header__left">
         <div className="logo">
           <Link to="/">
@@ -40,13 +53,13 @@ function Header() {
       <div className="header__right">
         {
           (isLoggedIn)
-            ? <Link className="header-profile" to="/profile/">
+            ? <Link className="header-profile" to="/profile">
                 <img className="header-profile__photo" src={avatar} alt="avatar" />
                 <div className="header-profile__name">{fullName}</div>
               </Link>
             : <>
-                <Link className="button button--white" to="/signin/">{t('header.btns.btn1')}</Link>
-                <Link className="button button--blue" to="/registration/">{t('header.btns.btn2')}</Link>
+                <Link className="button button--white" to="/signin">{t('header.btns.btn1')}</Link>
+                <Link className="button button--blue" to="/registration">{t('header.btns.btn2')}</Link>
               </>
         }
         <div className="header-right__item language" onClick={() => changeLanguage('en')} >
@@ -58,6 +71,7 @@ function Header() {
           <div className="language__text">Ру</div>
         </div>
       </div>
+      {(currentState === 'modalMenu') ? '' : <img className="burger" src={burger} alt="menu" onClick={showMenu}/>}
     </header>
   );
 }

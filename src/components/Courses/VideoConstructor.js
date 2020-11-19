@@ -3,10 +3,11 @@ import Iframe from 'react-iframe';
 import * as allActions from '../../actions';
 import {useDispatch, useSelector} from 'react-redux';
 import {useTranslation} from 'react-i18next';
+import _ from 'lodash';
 
 
 function VideoConstructor(props) {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const language = i18n.language;
 
   const { videoList, type } = props.props;
@@ -14,7 +15,7 @@ function VideoConstructor(props) {
 
   const video = (id, title) => {
     return (
-      <li>
+      <li key={_.uniqueId()}>
         <div className="course__content-link list-group-item-action" id={id}
                 onClick={videoSwitcher}>{title}
         </div>

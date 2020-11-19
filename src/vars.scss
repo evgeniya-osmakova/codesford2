@@ -1,6 +1,8 @@
 @import '../public/fonts.scss';
 
 $main-color: #5870F2;
+$max-pc-width: 1100px;
+$background: #ECECEC;
 
 @mixin h1Text {
   font-family: 'Montserrat', sans-serif;

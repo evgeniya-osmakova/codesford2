@@ -9,7 +9,7 @@ import {signIn} from '../../actions';
 
 const Authorization = () => {
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
 

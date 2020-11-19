@@ -4,7 +4,7 @@ import {Carousel} from 'react-bootstrap';
 import {useTranslation} from 'react-i18next';
 
 function Carousel1() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
 

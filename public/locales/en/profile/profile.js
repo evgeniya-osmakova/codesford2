@@ -6,6 +6,7 @@ export default {
       name: 'Name',
       last_name: 'Last name'
     },
-    btn: 'Save'
+    btn: 'Save',
+    logOut: 'Log out'
   }
 }

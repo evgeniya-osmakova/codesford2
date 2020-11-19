@@ -26,7 +26,7 @@ import {useTranslation} from 'react-i18next';
 
 
 function Team() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <main>
@@ -176,9 +176,6 @@ function Team() {
                   </a>
                   <a href="https://stackoverflow.com/users/14372820/evgeniya-osmakova" target="_blank">
                     <img src={stack} alt="stack"/>
-                  </a>
-                  <a href="https://www.facebook.com/" target="_blank">
-                    <img src={facebook} alt="facebook"/>
                   </a>
                 </div>
                 <hr />

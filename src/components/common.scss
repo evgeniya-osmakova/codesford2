@@ -36,7 +36,8 @@
     color: white;
     border: 2px solid #FFC945;
     &:hover {
-      border-color: white;
+      opacity: 0.8;
+      border: 2px solid #FFC945;
     }
     &:active {
       border-color: white;

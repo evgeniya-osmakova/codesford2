@@ -4,17 +4,17 @@ import * as Yup from "yup";
 import {useTranslation} from 'react-i18next';
 import {Link, useHistory} from 'react-router-dom';
 import './registration.scss';
-import {useDispatch, useSelector} from 'react-redux';
-import {registration, registrationSuccess} from '../../actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { registration } from '../../actions';
 
 const Registration = () => {
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
 
   const signInSchema = Yup.object().shape({
-    name: Yup.string()
+    first_name: Yup.string()
       .required(t('registration.validation_errors.error1')),
     last_name: Yup.string()
       .required(t('registration.validation_errors.error2')),
@@ -29,7 +29,7 @@ const Registration = () => {
   });
 
   const initialValues = {
-    name: "",
+    first_name: "",
     last_name: "",
     email: "",
     password: "",
@@ -119,6 +119,7 @@ const Registration = () => {
                     type="password"
                     name="password"
                     id="password"
+                    autoComplete="on"
                     className={
                       errors.password && touched.password ? "input-error" : null
                     }
@@ -134,6 +135,7 @@ const Registration = () => {
                     type="password"
                     name="passwordConfirmation"
                     id="passwordConfirmation"
+                    autoComplete="on"
                     className={
                       errors.passwordConfirmation && touched.passwordConfirmation ? "input-error" : null
                     }

@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import './Main.scss';
 import reasons from './img/Reasons.png';
 import service from './img/service.png';
@@ -11,10 +11,10 @@ import Solution from './Solution.js';
 import Business_model from './Business_model.js';
 import Team_short from './Team_short.js';
 import {useTranslation} from 'react-i18next';
-
 function Main() {
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+
 
   return (
     <main>

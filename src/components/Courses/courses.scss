@@ -1,5 +1,7 @@
+@import "../../../src/vars.scss";
+
 .course {
-  background-color: #F0F3FB;
+  background-color: $background;
 }
 
 .course__video-screen {

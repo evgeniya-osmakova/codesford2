@@ -11,7 +11,7 @@ import './Main.scss';
 import {useTranslation} from 'react-i18next';
 
 function Team_short() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="team">

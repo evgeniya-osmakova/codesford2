@@ -1,13 +1,14 @@
+@import "../../../src/vars.scss";
+
 .form {
+  background: $background;
   padding-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-$primary-color: #1d3557;
 $error-color: #e63946;
-$text-color: #293241;
 $color-white: #fff;
 $shadow-color: #dedee6;
 $border-radius: 4px;
@@ -17,30 +18,21 @@ $border-radius: 4px;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 3rem 4rem;
-  border-radius: $border-radius;
   background: $color-white;
-  box-shadow: 10px 10px 20px rgba($shadow-color, 0.4),
-  -10px -10px 20px rgba($shadow-color, 0.8),
-  -8px 8px 30px rgba($shadow-color, 1);
+  border-radius: 10px;
 
   h1 {
-    font-size: 2rem;
-    color: $text-color;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
   }
 
-  label,
-  input {
-    color: $text-color;
-  }
-
   label {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
   }
 
   input {
-    border: 2px solid rgba($primary-color, 0.8);
+    border: 2px solid rgba(black, 0.8);
     border-radius: $border-radius;
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -56,7 +48,7 @@ $border-radius: 4px;
     color: $color-white;
     width: 100%;
     font-size: 1.2rem;
-    background: $primary-color;
+    background: $main-color;
     border-radius: $border-radius;
     border: none;
     cursor: pointer;
@@ -64,7 +56,7 @@ $border-radius: 4px;
     margin-top: 0.8rem;
 
     &:hover {
-      background: rgba($primary-color, 0.8);
+      background: rgba($main-color, 0.8);
     }
   }
 
@@ -80,7 +72,7 @@ $border-radius: 4px;
 
   .disabled-btn {
     cursor: not-allowed;
-    background: rgba($primary-color, 0.8);
+    background: rgba($main-color, 0.8);
   }
 }
 

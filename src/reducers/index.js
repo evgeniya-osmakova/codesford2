@@ -6,6 +6,12 @@ import {videoListHtml} from '../components/Courses/listOfHtmlVideos.js'
 import {videoListJs} from '../components/Courses/listOfJsVideos.js';
 import {videoListBootstrap} from '../components/Courses/listOfBootstrapVideos.js';
 
+const appState = handleActions({
+  [actions.changeState](state, {payload: { newState }}) {
+    return newState;
+  }
+}, 'default');
+
 const authorization = handleActions({
   [actions.signInRequest]() {
     return 'requested';
@@ -14,7 +20,8 @@ const authorization = handleActions({
     if (err.response) {
       return 'response_error'
     }
-    return 'request_error';
+    return 'response_error'
+    //return 'request_error';
   },
   [actions.signInSuccess]() {
     return 'finished';
@@ -32,7 +39,8 @@ const registration = handleActions({
     if (err.response) {
       return 'response_error'
     }
-    return 'request_error';
+    return 'response_error'
+    // return 'request_error';
   },
 }, 'none');
 
@@ -47,7 +55,8 @@ const updating = handleActions({
     if (err.response) {
       return 'response_error'
     }
-    return 'request_error';
+    return 'response_error'
+    // return 'request_error';
   },
 }, 'none');
 
@@ -58,7 +67,10 @@ const userData = handleActions({
   [actions.updatingSuccess](state, { payload: { name, last_name }}) {
     return { ...state, first_name: name, last_name: last_name };
   },
-}, {isLoggedIn: true, id: null, first_name: 'Ivan', last_name: 'Ivanov', email: '' });
+  [actions.logOut]() {
+    return { isLoggedIn: false, id: null, first_name: '', last_name: '', email: '' };
+  },
+}, {isLoggedIn: true, id: null, first_name: 'Richard', last_name: 'Hendrix', email: '' });
 
 const video = handleActions({
   [actions.changeCurrentVideo](state, { payload: { newVideo, type, language } }) {
@@ -90,5 +102,6 @@ export default combineReducers({
   authorization,
   registration,
   updating,
-  userData
+  userData,
+  appState
 });

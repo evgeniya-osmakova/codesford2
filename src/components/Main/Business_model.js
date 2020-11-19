@@ -4,7 +4,7 @@ import './Main.scss';
 import {useTranslation} from 'react-i18next';
 
 function Business_model() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="codesford">

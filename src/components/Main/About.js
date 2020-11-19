@@ -3,7 +3,6 @@ import './About.scss';
 import './Main.scss';
 import Iframe from 'react-iframe';
 import {useTranslation} from 'react-i18next';
-import {useSelector} from 'react-redux';
 
 function About() {
   const { t, i18n } = useTranslation();

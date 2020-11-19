@@ -1,7 +1,5 @@
 @import "../common.scss";
 
-$background: #ECECEC;
-
 .profile-page {
   background: $background;
   display: flex;
@@ -9,7 +7,9 @@ $background: #ECECEC;
 }
 
 .profile {
+  border-radius: 10px;
   width: calc(100vw - 175px * 2);
+  min-width: 350px;
   //height: 600px;
   background: white;
   margin-top: 60px;
@@ -26,7 +26,6 @@ $background: #ECECEC;
   }
 
   &__section {
-
   }
 }
 
@@ -42,19 +41,23 @@ $background: #ECECEC;
   }
 
   &__input {
-    width: 780px;
+    width: 600px;
     margin-bottom: 35px;
+    @media (max-width: $max-pc-width) {
+      width: 300px;
+    }
   }
 
-  &__button {
+  &__buttons {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 60px;
   }
 }
 
-//.x{
-//  size: 780px;
-//  min-width: 200px;
-//}
+.logOut {
+  cursor: pointer;
+  text-decoration: underline;
+  color: $main-color;
+}

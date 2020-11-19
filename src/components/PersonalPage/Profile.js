@@ -3,10 +3,12 @@ import './Profile.scss';
 import { useTranslation } from 'react-i18next';
 import {useSelector, useDispatch} from 'react-redux';
 import { updateUserData } from '../../actions';
+import {useHistory} from 'react-router-dom';
+import * as allActions from '../../actions';
 
 function App() {
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const bio = useSelector((state) => state.userData);
 
   const { first_name, last_name, id } = bio;
@@ -28,6 +30,12 @@ function App() {
   const textEdit = (e) => {
     const { id, value } = e.target
     mapping[id] = value;
+  }
+
+  let history = useHistory();
+  const logOut = () => {
+    dispatch(allActions.logOut());
+    history.push('/');
   }
 
   return (
@@ -56,7 +64,8 @@ function App() {
               <input onChange={textEdit} type="text" id="profile_last_name" name="vacancy" defaultValue={mapping.profile_last_name}
                        className="profile-form__input" placeholder={t('profile.main.last_name')} required />
             </div>
-            <div className="profile-form__button">
+            <div className="profile-form__buttons">
+              <div className="logOut" onClick={logOut}>{t('profile.logOut')}</div>
               <input className="button button--yellow" type="submit" value={t('profile.btn')}/>
             </div>
           </form>

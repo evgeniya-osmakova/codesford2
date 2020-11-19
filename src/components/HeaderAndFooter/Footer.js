@@ -26,7 +26,7 @@ function Footer() {
     return (currentLanguage === 'ru')
       ? (
         <a href="https://vk.com/codesford" target="_blank">
-        <img className="menu__language-img" src={vk} alt="vk icon" />
+        <img className="social-img" src={vk} alt="vk icon" />
       </a>
       )
       : '';
@@ -48,10 +48,10 @@ function Footer() {
                 <Link className="footer__menu-link mr-4" to="/">{t('footer.menu.item1')}</Link>
               </li>
               <li>
-                <Link className="footer__menu-link mr-4" to="/study/">{t('footer.menu.item2')}</Link>
+                <Link className="footer__menu-link mr-4" to="/study">{t('footer.menu.item2')}</Link>
               </li>
               <li>
-                <Link className="footer__menu-link" to="/crew/">{t('footer.menu.item3')}</Link>
+                <Link className="footer__menu-link" to="/crew">{t('footer.menu.item3')}</Link>
               </li>
             </ul>
           </div>
@@ -59,13 +59,13 @@ function Footer() {
             <p className="footer__social-header">{t('footer.social')}</p>
             {add_vk()}
             <a href="https://www.youtube.com/channel/UCAJdCHneL0v4Ad38UVaCjbg" target="_blank">
-              <img className="menu__language-img" src={youtube} alt="youtube icon" />
+              <img className="social-img" src={youtube} alt="youtube icon" />
             </a>
             <a href="https://t.me/CodesFord" target="_blank">
-              <img className="menu__language-img" src={telegram} alt="telegram icon" />
+              <img className="social-img" src={telegram} alt="telegram icon" />
             </a>
             <a href="https://www.facebook.com/CodesFord2020" target="_blank">
-              <img className="menu__language-img" src={fb} alt="fb icon" />
+              <img className="social-img" src={fb} alt="fb icon" />
             </a>
           </div>
         </div>

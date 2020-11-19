@@ -7,5 +7,6 @@ export default {
       last_name: 'Фамилия'
     },
     btn: 'Сохранить',
+    logOut: 'Выйти из профиля'
   }
 }

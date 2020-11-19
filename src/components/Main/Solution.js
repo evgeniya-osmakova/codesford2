@@ -8,7 +8,7 @@ import './Main.scss';
 import {useTranslation} from 'react-i18next';
 
 function Solution() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="solution">

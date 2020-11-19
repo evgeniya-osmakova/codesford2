@@ -2,6 +2,7 @@ import axios from 'axios';
 import { createAction } from 'redux-actions';
 import routes from '../routes.js';
 
+export const changeState = createAction('STATE_CHANGE');
 
 export const changeCurrentVideo = createAction('VIDEO_CHANGE');
 
@@ -16,6 +17,8 @@ export const registrationFailure = createAction('REGISTRATION_FAILURE');
 export const updatingRequest = createAction('UPDATING_REQUEST');
 export const updatingSuccess = createAction('UPDATING_SUCCESS');
 export const updatingFailure = createAction('UPDATING_FAILURE');
+
+export const logOut = createAction('LOG_OUT');
 
 export const signIn = (username, password) => async (dispatch) => {
   console.log(username, password)
@@ -36,7 +39,7 @@ export const registration = (name, last_name, email, password, passwordConfirmat
   dispatch(registrationRequest());
   try {
     const url = routes.registrationUrl();
-    const response = await axios.post(url, { name, last_name, email, password, passwordConfirmation });
+    await axios.post(url, { name, last_name, email, password, passwordConfirmation });
     dispatch(registrationSuccess());
   } catch (err) {
     console.log(err);
