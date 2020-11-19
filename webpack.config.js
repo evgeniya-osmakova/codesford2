@@ -8,7 +8,7 @@ module.exports = {
   entry: './src/index.js',
   mode: 'development',
   output: {
-    publicPath: './',
+    publicPath: '/',
     path: path.join(__dirname, '/dist'),
     filename: 'result.js',
   },
