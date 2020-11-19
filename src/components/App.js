@@ -44,16 +44,16 @@ function App() {
           <Route path="/signin">
             <SignIn />
           </Route>
-          <Route path="/study/html">
+          <Route exact path="/study/html">
             <Html />
           </Route>
-          <Route path="/study/css">
+          <Route exact path="/study/css">
             <Css />
           </Route>
-          <Route path="/study/js">
+          <Route exact path="/study/js">
             <Js />
           </Route>
-          <Route path="/study/bootstrap">
+          <Route exact path="/study/bootstrap">
             <Bootstrap />
           </Route>
           <Route path="/profile">
